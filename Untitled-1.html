@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trash - 随便写写</title>
+    <style>
+        :root {
+            --bg-color: #f4f4f0;
+            --text-color: #1a1a1a;
+            --card-bg: #ffffff;
+            --border: 2px solid #1a1a1a;
+        }
+        
+        body {
+            font-family: 'Courier New', Courier, monospace, "Microsoft YaHei";
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: var(--border);
+            background-color: var(--card-bg);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* 提交区设计 */
+        .submit-area {
+            margin-bottom: 50px;
+            padding: 20px;
+            border: var(--border);
+            background-color: var(--card-bg);
+            box-shadow: 4px 4px 0px var(--text-color);
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            border: none;
+            resize: none;
+            font-family: inherit;
+            font-size: 1rem;
+            outline: none;
+            background: transparent;
+        }
+
+        button {
+            background-color: var(--text-color);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-family: inherit;
+            font-size: 1rem;
+            cursor: pointer;
+            float: right;
+            transition: transform 0.1s;
+        }
+
+        button:active {
+            transform: translateY(2px);
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        /* 瀑布流/卡片内容区 */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: var(--border);
+            padding: 20px;
+            box-shadow: 3px 3px 0px rgba(0,0,0,0.1);
+        }
+
+        .card-title {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px dashed #ccc;
+        }
+
+        .card-content {
+            font-size: 0.95rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .card-meta {
+            font-size: 0.8rem;
+            color: #888;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .tag {
+            background-color: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Trash.</h1>
+        <div class="subtitle">一个收容所有人随便写写的地方。丢掉完美，留下真实。</div>
+    </header>
+
+    <div class="container">
+        <div class="submit-area clearfix">
+            <textarea placeholder="把你想扔掉的废话、草稿、碎碎念丢进来吧..."></textarea>
+            <button>丢进 Trash</button>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-title">星期二的雨</div>
+                <div class="card-content">
+                    刚才下楼买咖啡，伞被风吹翻了。突然觉得挺好笑的，生活就是这样，你以为准备好了，它偏要给你捣乱。算了，咖啡还是挺好喝的。
+                </div>
+                <div class="card-meta">
+                    <span>匿名</span>
+                    <span class="tag">#日常琐事</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">一段没用上的前言</div>
+                <div class="card-content">
+                    “在这庞大的数据流中，我们试图寻找某种规律，但往往只能看到一片混沌。” —— 这句话写在报告里太装了，删了，扔这里吧。
+                </div>
+                <div class="card-meta">
+                    <span>打工人007</span>
+                    <span class="tag">#废弃草稿</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">无题</div>
+                <div class="card-content">
+                    晚上睡不着，耳机里一直循环同一首日文歌。明天还有一堆事情要处理，但我现在只想发呆。
+                </div>
+                <div class="card-meta">
+                    <span>夜猫子</span>
+                    <span class="tag">#深夜矫情</span>
+                </div>
+            </div>
+
+             <div class="card">
+                <div class="card-title">灵感碎片</div>
+                <div class="card-content">
+                    如果把所有的云朵都收集起来，能不能做一张巨大的蹦床？（写小说可以用到，先记下来，大概率会忘）
+                </div>
+                <div class="card-meta">
+                    <span>脑洞机</span>
+                    <span class="tag">#灵光一闪</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
